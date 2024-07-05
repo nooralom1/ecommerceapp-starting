@@ -1,4 +1,11 @@
+import 'package:ecommerce_app/common/widget/custom_elevated_button.dart';
+import 'package:ecommerce_app/common/widget/custom_textfeild.dart';
+import 'package:ecommerce_app/constant/icon.dart';
+import 'package:ecommerce_app/constant/text.dart';
 import 'package:flutter/material.dart';
+
+import '../../common/widget/custom_card.dart';
+import '../../constant/images.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -6,114 +13,80 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.all(20),
-          width: double.infinity,
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 30, right: 280),
-                child: Icon(Icons.arrow_back_ios),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 220),
-                child: Text(
-                  "Login",
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            margin: const EdgeInsets.all(20),
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Icon(NIcons.leftIcon),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  NTexts.logInPageTittle,
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
-              ),
-              SizedBox(
-                height: 60,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    suffixIcon: Icon(
-                      Icons.check_sharp,
-                      color: Color(0xff2AA952),
-                    ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    hintText: ("noor@1545gmail.com"),
-                    labelText: ("Email")),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    hintText: ("**********"),
-                    labelText: ("Password")),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 15, left: 135),
-                child: Row(
+                const SizedBox(
+                  height: 60,
+                ),
+                CustomTextField(
+                  hintText: NTexts.textFieldEmailHeinText,
+                  labelText: NTexts.textFieldEmailLabelText,
+                  onPress: () {},
+                  borderRadius: 10,
+                  suffixIcon: NIcons.suffixIcon,
+                  siColor: const Color(0xff2AA952),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                CustomTextField(
+                    hintText: NTexts.textFieldPasswordHeinText,
+                    labelText: NTexts.textFieldPasswordLabelText,
+                    onPress: () {},
+                    borderRadius: 10),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "Forgot your password?",
+                      NTexts.signUpPageSubTittle,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Icon(
-                      Icons.arrow_right_alt,
+                      NIcons.rightIcon,
                       color: Color(0xffDB3022),
                     )
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              SizedBox(
+                const SizedBox(
                   height: 40,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xffDB3022)),
-                    onPressed: () {},
-                    child: Text(
-                      "LOGIN",
-                      style: TextStyle(color: Color(0xffFFFFFF)),
-                    ),
-                  )),
-              SizedBox(
-                height: 164,
-              ),
-              Text("Or login with social account"),
-              Padding(
-                padding: const EdgeInsets.only(left: 80, top: 15),
-                child: Row(
+                ),
+                CustomElevatedButton(
+                    buttonName: NTexts.logInPageTxFldName, onPress: () {}),
+                const SizedBox(
+                  height: 164,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      height: 65,
-                      width: 80,
-                      child: Card(
-                        color: Color(0xffFFFFFF),
-                        child: Center(
-                          child: Image.network(
-                              "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 65,
-                      width: 80,
-                      child: Card(
-                        color: Color(0xffFFFFFF),
-                        child: Center(
-                          child: Image.network(
-                              "https://e7.pngegg.com/pngimages/991/568/png-clipart-facebook-logo-computer-icons-facebook-logo-facebook-thumbnail.png"),
-                        ),
-                      ),
-                    ),
+                    Text(NTexts.logInPageSubTittle1),
                   ],
                 ),
-              )
-            ],
+                const SizedBox(
+                  height: 10,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomCard(image: NImages.suPageGoogle),
+                    CustomCard(image: NImages.suPageFaceBook),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

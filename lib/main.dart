@@ -1,3 +1,4 @@
+
 import 'package:ecommerce_app/pages/authentications/forgot_password_page.dart';
 import 'package:ecommerce_app/pages/authentications/login_page.dart';
 import 'package:ecommerce_app/pages/authentications/sign_up_page.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const VisualSearchPage(),
+      home: const ForgotPasswordPage(),
     );
   }
 }
