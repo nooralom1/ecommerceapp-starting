@@ -25,25 +25,28 @@ class VisualSearchPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        Positioned(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(
-                NTexts.visualSearchPageHomeTittle,
-                style: TextStyle(
-                    color: Color(0xffFFFFFF),
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.left,
-              ),
-              CustomElevatedButton(buttonName: NTexts.vsPageElevatedButtonName, onPress: (){}),
-              SizedBox(
-                width: double.infinity,
-                child: CustomOutlinedButton(buttonName: NTexts.vsPageOutlinedButtonName, onPress: (){},),
-              )
-            ],
+        Container(
+          margin: EdgeInsets.all(20),
+          child: Positioned(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Text(
+                  NTexts.visualSearchPageHomeTittle,
+                  style: TextStyle(
+                      color: Color(0xffFFFFFF),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.left,
+                ),
+                CustomElevatedButton(buttonName: NTexts.vsPageElevatedButtonName, onPress: (){}),
+                SizedBox(
+                  width: double.infinity,
+                  child: CustomOutlinedButton(buttonName: NTexts.vsPageOutlinedButtonName, onPress: (){},),
+                )
+              ],
+            ),
           ),
         ),
       ]),
